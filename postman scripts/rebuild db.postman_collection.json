@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "3974a9e0-d68c-4d48-a4c5-6484fb20f891",
+		"name": "rebuild db",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "populate_source",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": {\r\n        \"name\": \"Thrillophilia\",\r\n        \"code\": \"TH\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/sources",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_source Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": {\r\n        \"name\": \"PipeDrive\",\r\n        \"code\": \"PD\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/sources",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_source Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": {\r\n        \"name\": \"AirTable\",\r\n        \"code\": \"AT\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/sources",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event\": {\r\n        \"source_id\": 1,\r\n        \"name\": \"booking done\",\r\n        \"code\": \"th_booking_done\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/events",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_event Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event\": {\r\n        \"source_id\": 1,\r\n        \"name\": \"booking cancelled\",\r\n        \"code\": \"th_booking_cancelled\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/events",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_event Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event\": {\r\n        \"source_id\": 2,\r\n        \"name\": \"deal cancelled\",\r\n        \"code\": \"pd_deal\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/events",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_a_field",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"field\": {\r\n        \"event_id\": \"5\",\r\n        \"code\":\"pd_tour_location\",\r\n        \"name\": \"tour_location\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/fields/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"fields",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_a_field Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"field\": {\r\n        \"event_id\": \"5\",\r\n        \"code\":\"pd_DOJ\",\r\n        \"name\": \"DOJ\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/fields/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"fields",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_a_field Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"field\": {\r\n        \"event_id\": \"5\",\r\n        \"code\":\"pd_name_of_passenger\",\r\n        \"name\": \"name of passenger\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/fields/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"fields",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_a_field Copy 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"field\": {\r\n        \"event_id\": \"5\",\r\n        \"code\":\"pd_booking_amount\",\r\n        \"name\": \"booking amount\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/fields/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"fields",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populate_a_campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"event_id\":\"5\",\r\n  \"name\":\"[pipedrive]: send sms when deal is cancelled and tour location was shimla\",\r\n  \"code\":\"send_sms\",\r\n  \"state\":true,\r\n  \"conditions\":[\r\n    {\r\n      \"glue\":\"AND\",\r\n      \"conditions\":[\r\n        {\r\n          \"glue\":\"AND\",\r\n          \"conditions\":[\r\n            {\r\n              \"key\":\"tour_location\",\r\n              \"operator\":\"startsWith\",\r\n              \"value\":\"G\"\r\n            },\r\n            {\r\n              \"key\":\"no_of_passengers\",\r\n              \"operator\":\"inInclusiveRange\",\r\n              \"value\":\"1 10\"\r\n            },\r\n            {\r\n              \"key\":\"DOJ\",\r\n              \"operator\":\"isLessThan\",\r\n              \"value\":\"2022-01-21\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"glue\":\"AND\",\r\n          \"conditions\":[\r\n            {\r\n              \"key\":\"no_of_passengers\",\r\n              \"operator\":\"isLessThanOrEqual\",\r\n              \"value\":5\r\n            },\r\n            {\r\n              \"key\":\"deal_amount\",\r\n              \"operator\":\"inExclusiveRange\",\r\n              \"value\":\"1200 5001\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/campaigns/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"campaigns",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

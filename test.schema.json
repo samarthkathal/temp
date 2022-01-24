@@ -1,0 +1,214 @@
+[{
+  "glue": "AND",
+  "conditions": [
+    {   
+      "glue": "AND",
+      "conditions": [
+        {  
+          "key": "tour_location",
+          "operator": "startsWith",
+          "value": "G"
+        },
+        { 
+          "key": "no_of_passengers",
+          "operator": "inInclusiveRange",
+          "value": "10"
+        },
+        { 
+          "key": "DOJ",
+          "operator": "isLessThan",
+          "value": "2022-01-21"
+        },
+      ]
+    },      
+    {
+      "glue": "AND",
+      "conditions": 
+      [{ 
+        "key": "no_of_passengers",
+        "operator": "isLessThanOrEqual",
+        "value": 5
+      },
+      {
+        "key": "deal_amount",
+        "operator": "inExclusiveRange",
+        "value": "1200 5001"
+      }]
+    }
+  ]
+}]
+
+
+
+
+//final schema
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "type":"object",
+  "properties":{
+    "items":{"$ref":"#/$defs"}
+  },
+  
+  "$defs":{
+    "glue":{"type":"string"},
+    "conditions":{"type":"array"},
+    "required":["glue", "conditions"],
+  }
+}
+
+
+
+
+
+
+//first draft
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "glue": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "glue": {
+                  "type": "string"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "glue": {
+                          "type": "string"
+                        },
+                        "conditions": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "field_code": {
+                                  "type": "string"
+                                },
+                                "operator": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "field_code",
+                                "operator",
+                                "value"
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "field_code": {
+                                  "type": "string"
+                                },
+                                "operator": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "field_code",
+                                "operator",
+                                "value"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "glue",
+                        "conditions"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "glue": {
+                          "type": "string"
+                        },
+                        "conditions": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "field_code": {
+                                  "type": "string"
+                                },
+                                "operator": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "field_code",
+                                "operator",
+                                "value"
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "field_code": {
+                                  "type": "string"
+                                },
+                                "operator": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "field_code",
+                                "operator",
+                                "value"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "glue",
+                        "conditions"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "glue",
+                "conditions"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "glue",
+        "conditions"
+      ]
+    }
+  ]
+}
